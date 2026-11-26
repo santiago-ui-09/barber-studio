@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Barber Studio | Barbería</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #0b0b0b;
+            color: white;
+        }
+
+        /* ===== ENCABEZADO ===== */
+
+        header {
+            min-height: 650px;
+            background:
+                radial-gradient(circle at center, #292929 0%, #080808 65%);
+            border-bottom: 1px solid #c9a227;
+            padding: 25px 7%;
+        }
+
+        .barra {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 27px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo span {
+            color: #c9a227;
+        }
+
+        nav {
+            display: flex;
+            gap: 28px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c9a227;
+        }
+
+        /* ===== HERO ===== */
+
+        .hero {
+            max-width: 800px;
+            margin: 150px auto 0;
+            text-align: center;
+        }
+
+        .etiqueta {
+            color: #c9a227;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: 64px;
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .hero h1 span {
+            color: #c9a227;
+        }
+
+        .descripcion {
+            color: #aaa;
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 600px;
+            margin: auto;
+        }
+
+       .boton {
+    display: inline-block;
+    margin-top: 35px;
+    padding: 15px 30px;
+    background: #c9a227;
+    color: #000;
+    text-decoration: none;
+    border-radius: 7px;
+    font-weight: bold;
+    transition: 0.3s;
+    box-shadow: 0 5px 20px rgba(201, 162, 39, 0.25);
+}
+
+.boton:hover {
+    background: #fff;
+    color: #000;
+    transform: translateY(-4px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+        /* ===== SERVICIOS ===== */
+
+        .titulo {
+            text-align: center;
+            padding: 80px 20px 35px;
+        }
+
+        .titulo h2 {
+            font-size: 38px;
+            margin-bottom: 12px;
+        }
+
+        .titulo p {
+            color: #888;
+        }
+
+        .servicios {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            padding: 30px 7% 90px;
+        }
+
+        .servicio {
+            width: 280px;
+            background: #121212;
+            border: 1px solid #292929;
+            border-radius: 15px;
+            padding: 35px 25px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .servicio:hover {
+            transform: translateY(-8px);
+            border-color: #c9a227;
+        }
+
+        .icono {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .servicio h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .servicio p {
+            color: #999;
+            line-height: 1.6;
+        }
+
+        .precio {
+            color: #c9a227 !important;
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+/* ===== GALERÍA ===== */
+
+.galeria {
+    background: #080808;
+    padding-bottom: 80px;
+}
+
+.galeria-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+    padding: 20px 7%;
+}
+
+.foto {
+    width: 280px;
+    height: 320px;
+    background:
+        linear-gradient(
+            135deg,
+            #252525,
+            #101010
+        );
+    border: 1px solid #292929;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+}
+
+.foto:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #c9a227;
+    box-shadow: 0 10px 30px rgba(201, 162, 39, 0.25);
+}
+
+.foto div {
+    color: #c9a227;
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 3px;
+} 
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+}
+
+        /* ===== NOSOTROS ===== */
+
+        .nosotros {
+            background: #111;
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid #222;
+            border-bottom: 1px solid #222;
+        }
+
+        .nosotros h2 {
+            font-size: 35px;
+            margin-bottom: 20px;
+        }
+
+        .nosotros p {
+            max-width: 650px;
+            margin: auto;
+            color: #999;
+            line-height: 1.8;
+        }
+
+        /* ===== CONTACTO ===== */
+
+        .contacto {
+            text-align: center;
+            padding: 80px 20px;
+        }
+
+        .contacto h2 {
+            font-size: 35px;
+            margin-bottom: 15px;
+        }
+
+        .contacto p {
+            color: #999;
+            margin-bottom: 25px;
+        }
+
+        /* ===== FOOTER ===== */
+
+        footer {
+            background: #000;
+            border-top: 1px solid #222;
+            text-align: center;
+            padding: 30px 20px;
+            color: #777;
+        }
+
+        footer strong {
+            color: #c9a227;
+        }
+
+        /* ===== CELULAR ===== */
+
+        @media (max-width: 700px) {
+
+            header {
+                padding: 25px 20px;
+                min-height: 620px;
+            }
+
+            .barra {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                 gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+nav a {
+    font-size: 13px;
+
+            }
+
+            .hero {
+                margin-top: 100px;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .etiqueta {
+                font-size: 10px;
+                letter-spacing: 3px;
+            }
+
+            .descripcion {
+                font-size: 16px;
+            }
+
+            .servicio {
+                width: 100%;
+                max-width: 330px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+
+    <header id="inicio">
+
+        <div class="barra">
+
+            <div class="logo">
+                BARBER <span>STUDIO</span>
+            </div>
+
+            <nav>
+                <a href="#inicio">Inicio</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#galeria">Galería</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+            </nav>
+
+        </div>
+
+        <div class="hero">
+
+            <p class="etiqueta">
+                ESTILO • PRECISIÓN • ACTITUD
+            </p>
+
+            <h1>
+                TU ESTILO<br>
+                <span>COMIENZA AQUÍ</span>
+            </h1>
+
+            <p class="descripcion">
+                Cortes modernos y clásicos para quienes
+                quieren llevar su estilo al siguiente nivel.
+            </p>
+
+            <a href="#servicios" class="boton">
+                VER SERVICIOS
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ===== SERVICIOS ===== -->
+
+    <section class="titulo" id="servicios">
+
+        <h2>NUESTROS SERVICIOS</h2>
+
+        <p>
+            Calidad, precisión y estilo en cada corte.
+        </p>
+
+    </section>
+
+
+    <section class="servicios">
+
+        <div class="servicio">
+
+            <div class="icono">✂️</div>
+
+            <h3>Corte clásico</h3>
+
+            <p>
+                Un corte limpio y elegante para cualquier ocasión.
+            </p>
+
+            <p class="precio">
+                $20.000
+            </p>
+
+        </div>
+
+
+        <div class="servicio">
+
+            <div class="icono">💈</div>
+
+            <h3>Corte + barba</h3>
+
+            <p>
+                Corte moderno acompañado de arreglo de barba.
+            </p>
+
+            <p class="precio">
+                $30.000
+            </p>
+
+        </div>
+
+
+        <div class="servicio">
+
+            <div class="icono">🔥</div>
+
+            <h3>Corte premium</h3>
+
+            <p>
+                Corte, diseño y acabado detallado.
+            </p>
+
+            <p class="precio">
+                $40.000
+            </p>
+
+        </div>
+
+    </section>
+<!-- ===== GALERÍA ===== -->
+
+<section class="galeria" id="galeria">
+
+    <div class="titulo">
+
+        <h2>NUESTROS ESTILOS</h2>
+
+        <p>
+            Algunos de los estilos que puedes encontrar en Barber Studio.
+        </p>
+
+    </div>
+
+    <div class="galeria-grid">
+
+        <div class="foto">
+            <img src= "fade.jpg" alt="corte fade">
+        </div>
+
+        <div class="foto">
+            <img src="clasico.jpg" alt="corte clasico">
+        </div>
+
+        <div class="foto">
+            <img src="moderno.jpg" alt="corte moderno">
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ===== NOSOTROS ===== -->
+
+    <section class="nosotros" id="nosotros">
+
+        <h2>BARBER STUDIO</h2>
+
+        <p>
+            Un espacio creado para quienes buscan más que un corte:
+            buscamos que cada cliente salga con confianza,
+            personalidad y un estilo propio.
+        </p>
+
+    </section>
+
+
+    <!-- ===== CONTACTO ===== -->
+
+    <section class="contacto" id="contacto">
+
+        <h2>¿LISTO PARA TU PRÓXIMO CORTE?</h2>
+
+        <p>
+            Reserva tu cita y dale un nuevo estilo a tu look.
+        </p>
+
+        <a
+            class="boton"
+            href="https://wa.me/573026263941"
+            target="_blank"
+        >
+            RESERVAR POR WHATSAPP
+        </a>
+
+    </section>
+
+
+    <!-- ===== FOOTER ===== -->
+
+    <footer>
+
+        <p>
+            © 2026 <strong>Barber Studio</strong>
+        </p>
+
+        <p>
+            Estilo • Precisión • Actitud
+        </p>
+
+        <p>
+            Diseño y desarrollo web — Proyecto de portafolio
+        </p>
+
+    </footer>
+
+</body>
+</html>
